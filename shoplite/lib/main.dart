@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 5;
+  int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -65,6 +65,14 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: _resetCounter,
             tooltip: 'Сагсыг цэвэрлэх',
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Badge(
+              label: Text('$_counter'),
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              child: const Icon(Icons.shopping_cart_outlined),
+            ),
+          )
         ],
       ),
       body: Center(
